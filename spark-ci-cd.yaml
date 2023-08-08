@@ -1,0 +1,29 @@
+name: Spark CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: 11
+
+    - name: Build Spark App
+      run: |
+        cd src/main/scala
+        # Your build command here (e.g., sbt package)
+
+    - name: Run Tests
+      run: |
+        cd src/test/scala
+        # Your test command here
+

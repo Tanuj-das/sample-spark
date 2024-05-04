@@ -1,0 +1,7 @@
+[
+  {
+    "name": "node",
+    "imageUri": "909615039834.dkr.ecr.ap-south-1.amazonaws.com/skybiz:latest",
+    "containerPort": 4000
+  }
+]

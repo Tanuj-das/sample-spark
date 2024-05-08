@@ -7,7 +7,8 @@ phases:
       - apt-get install -y awscli
       - apt-get install -y docker.io
       # Start Docker daemon
-      - sudo systemctl start docker
+      #- sudo systemctl start docker
+      - sudo dockerd &
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 909615039834.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   build:

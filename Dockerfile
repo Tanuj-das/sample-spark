@@ -1,5 +1,6 @@
 FROM node:4.2
 COPY . /src
 RUN cd /src && npm install
+RUN ls
 EXPOSE 4000
-CMD ["node", "server.js"]
+RUN node server.js

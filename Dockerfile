@@ -7,4 +7,4 @@ COPY --from=build /app /app
 RUN cd /app && npm install
 RUN ls
 EXPOSE 4000
-RUN node server.js
+#CMD ["node", "server.js"]

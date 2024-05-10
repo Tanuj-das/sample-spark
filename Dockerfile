@@ -1,6 +1,10 @@
-FROM node:4.2
-WORKDIR /usr/src/app
-COPY . /app
+FROM node:14 AS build
+WORKDIR /app
+COPY . .
+
+FROM node:14
+WORKDIR /app
+COPY --from=build /app /app
 RUN cd /app && npm install
 RUN ls
 EXPOSE 4000
